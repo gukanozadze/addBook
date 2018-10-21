@@ -1,21 +1,26 @@
-const btn = $('#button');
+title = $('#title')
+author = $('#author')
+isbn = $('#ISBN')
+error_message = $('.error_msg')
+success_message = $('.success_msg')
 
-const table = $('table');
-const errorMSG = $('.error_msg');
-const successMSG = $('.success_msg');
-
-btn.on('click', function(){
+showMessage = (message) => message.show(400).delay(2000).hide(300)
 	
 
+$('#button').on('click', function(){
 
-		const title = $('#title').val();
-		const author = $('#author').val();
-		const ISBN = $('#ISBN').val();
-		successMSG.slideDown(400).delay(2500).slideUp(300);
-		table.append(`<tr>
-  				<td>${title}</td>
-  				<td>${author}</td>
-  				<td>${ISBN}</td>
-  				</tr>`)
-	
+	if (title.val().trim(), author.val().trim(), isbn.val().trim() == ''){
+		showMessage(error_message)
+
+	}else{
+		showMessage(success_message)
+		$('table').append(`
+			<tr>
+    			<td>${title.val()}</td>
+    			<td>${author.val()}</td>
+    			<td>${isbn.val()}</td>
+  			</tr>
+		`)
+	}
 })
+

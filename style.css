@@ -11,6 +11,7 @@ section{
 	margin: 0 auto;
 	margin-top: 20px;
 	padding: 10px;
+
 }
 
 input{
@@ -64,7 +65,9 @@ th, td{
 	font-weight: bold; 
 	font-size: 12px;
 }
-
+.error_msg{
+	background: red;
+}
 .success_msg{
 
 	text-shadow: 0px 0px 5px #262626;
